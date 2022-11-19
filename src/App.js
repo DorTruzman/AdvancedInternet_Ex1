@@ -1,5 +1,7 @@
 import "./App.css";
 import { useState } from "react";
+import Product from "./components/Product";
+import ExtraDetails from "./components/ExtraDetails";
 
 function App() {
   const [currProductIndex, setCurrProductIndex] = useState();
@@ -32,45 +34,23 @@ function App() {
   return (
     <div className="store">
       {currProductIndex !== undefined ? (
-        <div className="productExtraDetails">
-          <div style={{ fontWeight: "bold" }}>
-            {"פרטים נוספים על " + currProduct.name}
-          </div>
-          <div>{"חנות מוכרת: " + currProduct.store}</div>
-          <div>{"תיאור: " + currProduct.description}</div>
-          <div>
-            <img
-              className="productImg"
-              alt="Product Alternate"
-              src={currProduct.images[1]}
-            />
-          </div>
-
-          <button onClick={() => setCurrProductIndex(undefined)}>
-            חזרה לחנות
-          </button>
-        </div>
+        <ExtraDetails
+          name={currProduct.name}
+          store={currProduct.store}
+          description={currProduct.description}
+          images={currProduct.images}
+          setCurrProductIndex={setCurrProductIndex}
+        />
       ) : (
         <>
           {products.map((product, index) => (
-            <div
-              className="product"
-              onClick={() => {
-                setCurrProductIndex(index);
-              }}
-            >
-              <div>
-                <img
-                  className="productImg"
-                  alt="Product"
-                  src={product.images[0]}
-                />
-              </div>
-              <div className="productDetails">
-                <div>{product.name}</div>
-                <div>{product.price + " ₪"}</div>
-              </div>
-            </div>
+            <Product
+              name={product.name}
+              price={product.price}
+              images={product.images}
+              index={index}
+              setCurrProductIndex={setCurrProductIndex}
+            />
           ))}
         </>
       )}
