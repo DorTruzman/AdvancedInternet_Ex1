@@ -1,3 +1,4 @@
+import React from 'react';
 import "../App.css";
 
 function Product({ index, name, price, images, setCurrProductIndex }) {
