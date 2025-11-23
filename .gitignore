@@ -1,3 +1,10 @@
+Application (client) ID
+6bf417f6-6ee2-4732-a0c7-1b29779028cd
+Object ID
+f57952dc-9235-4f0e-88d7-8d0979676c61
+Directory (tenant) ID
+78820852-55fa-450b-908d-45c0d911e76b
+
 Stopped | ResourceInitializationError: unable to pull secrets or registry auth: execution resource retrieval failed: unable to retrieve secret from asm: service call has been retried 1 time(s): failed to fetch secret arn:aws:secretsmanager:il-central-1:264449293233:secret:meteorology/fetch-weather-prod from secrets manager: operation error Secrets Manager: GetSecretValue, https response error StatusCode: 400, RequestID: 40d20ffb-153f-4511-af6a-93d8a1bf146b, api error AccessDeniedException: User: arn:aws:sts::264449293233:assumed-role/fetch-weather-data-prod-exec-role/83ffa43ff92d4d99885d4786119c4293 is not authorized to perform: secretsmanager:GetSecretValue on resource: arn:aws:secretsmanager:il-central-1:264449293233:secret:meteorology/fetch-weather-prod because no identity-based policy allows the secretsmanager:GetSecretValue action
 
 # Logs
